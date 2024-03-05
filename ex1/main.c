@@ -62,6 +62,19 @@ int main() {
         return -1;
     }
 
+    int i,j;
+ 
+    // Draw some cool figures
+    for (i = 0; i < width; ++i) {
+        for (j = 0; j < height; ++j) {
+            ppm_image_setpixel( &src_img, i, j, i%255, j%255, (i+j)%255);
+        }
+    }
+ 
+    for (i = 0; i < height; ++i) {
+        ppm_image_setpixel( &src_img, i, i, 255, 0, 0 );
+    }
+
     // Dessiner un carré rouge sur l'image source
     draw_square(&src_img, 200, 200, 600, 400, 255, 0, 0);
 
